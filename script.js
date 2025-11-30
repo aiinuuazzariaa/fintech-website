@@ -8,11 +8,11 @@ const projects = [
     "repoLink": null
   },
   {
-    "title": "LenDenClub: Platform P2P Lending Terpercaya dari India",
+    "title": "Analisis Platform P2P Lending LenDenClub: Kinerja, Mekanisme, dan Potensi Risiko",
     "description": "LenDenClub adalah platform peer-to-peer (P2P) lending yang menghubungkan pemberi pinjaman individu dengan peminjam terverifikasi secara langsung tanpa bank sebagai perantara.",
     "tags": ["322310010 - Demitri Fernando Putra Aryandi", "322310021 - Ainu Azzaria"],
     "featured": false,
-    "demoLink": "/materi/lendenclub",
+    "demoLink": "materi/lendenclub",
     "repoLink": "https://github.com/aiinuuazzariaa/LenDenClub"
   },
   {
