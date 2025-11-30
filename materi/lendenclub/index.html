@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peer-to-Peer Lending: LenDenClub</title>
+
+  <!-- Markdown parser -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- Syntax highlighter -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/common.min.js"></script>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      padding: 2rem;
+      background: #f6f8fa;
+      color: #24292e;
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    #preview {
+      max-width: 900px;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    #toc {
+      position: sticky;
+      top: 2rem;
+      align-self: flex-start;
+      width: 250px;
+      max-height: calc(100vh - 4rem);
+      overflow-y: auto;
+      background: #fff;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      font-size: 0.9em;
+    }
+
+    #toc h2 {
+      font-size: 1em;
+      margin-bottom: 0.5em;
+      border-bottom: 1px solid #eaecef;
+      padding-bottom: 0.3em;
+    }
+
+    #toc ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    #toc li {
+      margin: 0.3em 0;
+      line-height: 1.4;
+    }
+
+    #toc a {
+      color: #0969da;
+      text-decoration: none;
+    }
+
+    #toc a:hover {
+      text-decoration: underline;
+    }
+
+    #toc .toc-h2 {
+      margin-left: 10px;
+    }
+
+    #toc .toc-h3 {
+      margin-left: 20px;
+    }
+
+    #toc .toc-h4 {
+      margin-left: 30px;
+    }
+
+    #toc .toc-h5 {
+      margin-left: 40px;
+    }
+
+    #toc .toc-h6 {
+      margin-left: 50px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: 0.8em;
+    }
+
+    h1 {
+      border-bottom: 2px solid #eaecef;
+      padding-bottom: 0.3em;
+    }
+
+    h2 {
+      border-bottom: 1px solid #eaecef;
+      padding-bottom: 0.3em;
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    ul,
+    ol {
+      margin: 1em 0 1em 2em;
+    }
+
+    li {
+      margin: 0.4em 0;
+    }
+
+    blockquote {
+      border-left: 4px solid #d0d7de;
+      padding: 0.5em 1em;
+      color: #57606a;
+      background: #f6f8fa;
+      border-radius: 6px;
+      margin: 1.2em 0;
+    }
+
+    code {
+      background: #f3f3f3;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: "Fira Code", monospace;
+      font-size: 0.95em;
+    }
+
+    pre {
+      background: #f6f8fa;
+      color: #24292e;
+      padding: 1em;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.95em;
+    }
+
+    pre code {
+      background: none;
+      color: inherit;
+      padding: 0;
+    }
+
+    a {
+      color: #0969da;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 6px;
+      display: block;
+      margin: 1em auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5em 0;
+    }
+
+    th,
+    td {
+      border: 1px solid #d0d7de;
+      padding: 8px 12px;
+      text-align: left;
+    }
+
+    th {
+      background: #f3f4f6;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) td {
+      background: #fafafa;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px solid #eee;
+      margin: 2em 0;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.2);
+      margin-right: 6px;
+    }
+
+    mark {
+      background: #fff59d;
+      padding: 0 3px;
+      border-radius: 3px;
+    }
+
+    sup {
+      font-size: 0.8em;
+      vertical-align: super;
+    }
+
+    sub {
+      font-size: 0.8em;
+      vertical-align: sub;
+    }
+
+    /* Alerts */
+    .markdown-alert {
+      border-left: 4px solid;
+      padding: 1em;
+      margin: 1.2em 0;
+      border-radius: 6px;
+      background: #f6f8fa;
+    }
+
+    .markdown-alert.note {
+      border-color: #0969da;
+    }
+
+    .markdown-alert.tip {
+      border-color: #1a7f37;
+    }
+
+    .markdown-alert.warning {
+      border-color: #9a6700;
+    }
+
+    .markdown-alert.danger {
+      border-color: #cf222e;
+    }
+
+    .markdown-alert-title {
+      font-weight: 600;
+      margin-bottom: 0.5em;
+    }
+
+    /* Footnotes */
+    .footnote {
+      font-size: 0.9em;
+      color: #4b5563;
+      margin-top: 1em;
+    }
+
+    .footnote .backref {
+      text-decoration: none;
+      margin-left: 4px;
+      color: #2563eb;
+    }
+
+    .footnote .backref:hover {
+      text-decoration: underline;
+    }
+
+    .task-list {
+      list-style: none;
+      padding-left: 1.2em;
+    }
+
+    .task-list-item {
+      list-style: none;
+      margin: 0.25em 0;
+    }
+
+    .task-list-item input[type="checkbox"] {
+      margin-right: 0.4em;
+    }
+
+    dl {
+      margin: 1em 0;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+
+    dd {
+      margin-left: 1.2em;
+      margin-bottom: 0.5em;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="preview">Loading markdown...</div>
+  <div id="toc">
+    <h2>Table of Contents</h2>
+    <ul></ul>
+  </div>
+
+  <script>
+    async function loadMarkdown() {
+      const response = await fetch("./README.md");
+      let markdownText = await response.text();
+
+      // Highlight text (==text==)
+      markdownText = markdownText.replace(/==(.+?)==/g, "<mark>$1</mark>");
+
+      // Subscript & Superscript
+      markdownText = markdownText
+        .replace(/~(.*?)~/g, "<sub>$1</sub>")
+        .replace(/\^(.*?)\^/g, "<sup>$1</sup>");
+
+      // GitHub Alerts
+      markdownText = markdownText
+        .replace(
+          /> \[!?NOTE\][\s\S]*?(?=(?:\n{2,}|$|\n>\s*\[!))/g,
+          (block) =>
+            '<div class="markdown-alert note"><div class="markdown-alert-title">📝 Note</div>' +
+            block.replace(/^> \[!?NOTE\]/, "").replace(/^> ?/gm, "").trim() +
+            "</div>"
+        )
+        .replace(
+          /> \[!?TIP\][\s\S]*?(?=(?:\n{2,}|$|\n>\s*\[!))/g,
+          (block) =>
+            '<div class="markdown-alert tip"><div class="markdown-alert-title">💡 Tip</div>' +
+            block.replace(/^> \[!?TIP\]/, "").replace(/^> ?/gm, "").trim() +
+            "</div>"
+        )
+        .replace(
+          /> \[!?WARNING\][\s\S]*?(?=(?:\n{2,}|$|\n>\s*\[!))/g,
+          (block) =>
+            '<div class="markdown-alert warning"><div class="markdown-alert-title">⚠️ Warning</div>' +
+            block.replace(/^> \[!?WARNING\]/, "").replace(/^> ?/gm, "").trim() +
+            "</div>"
+        )
+        .replace(
+          /> \[!?DANGER\][\s\S]*?(?=(?:\n{2,}|$|\n>\s*\[!))/g,
+          (block) =>
+            '<div class="markdown-alert danger"><div class="markdown-alert-title">❗ Danger</div>' +
+            block.replace(/^> \[!?DANGER\]/, "").replace(/^> ?/gm, "").trim() +
+            "</div>"
+        );
+
+      // === Definition List (term : definition) ===
+      markdownText = markdownText.replace(
+        /^([^\n:]+)\n: (.+)$/gm,
+        "<dl><dt>$1</dt><dd>$2</dd></dl>"
+      );
+
+      // === Footnote reference [^1] & definition [^1]: ===
+      const footnotes = {};
+      markdownText = markdownText.replace(/^\[\^(\d+)\]:(.*)$/gm, (match, id, text) => {
+        footnotes[id] = text.trim();
+        return "";
+      });
+
+      markdownText = markdownText.replace(/\[\^(\d+)\]/g, (match, id) => {
+        return `<sup id="fnref-${id}"><a href="#fn-${id}">[${id}]</a></sup>`;
+      });
+
+      // Configure marked
+      marked.setOptions({
+        gfm: true,
+        breaks: true,
+        headerIds: true,
+        highlight: function (code, lang) {
+          if (lang && hljs.getLanguage(lang)) {
+            return hljs.highlight(code, { language: lang }).value;
+          }
+          return hljs.highlightAuto(code).value;
+        },
+      });
+
+      // Render Markdown
+      let html = marked.parse(markdownText);
+
+      // Append footnotes at the bottom
+      if (Object.keys(footnotes).length) {
+        html += "<section class='footnotes'><h2>Footnotes</h2>";
+        for (const id in footnotes) {
+          html += `<p id="fn-${id}" class="footnote"><sup>${id}</sup> ${footnotes[id]} <a href="#fnref-${id}" class="backref">↩</a></p>`;
+        }
+        html += "</section>";
+      }
+
+      document.getElementById("preview").innerHTML = html;
+
+      // === Tambahan: External link icon ===
+      document.querySelectorAll("#preview a[href]").forEach(a => {
+        const href = a.getAttribute("href");
+        const isExternal = /^https?:\/\//i.test(href);
+        if (isExternal) {
+          a.setAttribute("target", "_blank");
+          a.setAttribute("rel", "noopener noreferrer");
+          a.innerHTML += ' <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" style="vertical-align: text-top; opacity: 0.7;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
+        }
+      });
+
+      generateTOC();
+    }
+
+    function generateTOC() {
+      const tocContainer = document.querySelector("#toc ul");
+      tocContainer.innerHTML = "";
+
+      const headers = document.querySelectorAll("#preview h1, #preview h2, #preview h3, #preview h4, #preview h5, #preview h6");
+
+      headers.forEach((header) => {
+        const id = header.id || header.textContent.trim().toLowerCase().replace(/\s+/g, "-");
+        header.id = id;
+
+        const li = document.createElement("li");
+        li.className = `toc-${header.tagName.toLowerCase()}`;
+        li.innerHTML = `<a href="#${id}">${header.textContent}</a>`;
+        tocContainer.appendChild(li);
+      });
+    }
+
+    loadMarkdown();
+  </script>
+
+</body>
+
+</html>

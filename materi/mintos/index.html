@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mintos Insight — Analisis Transformasi Digital (Mintos, Latvia)</title>
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind config -->
+    <script>
+        tailwind.config = {
+        darkMode: 'class',
+        theme: {
+            extend: {
+            fontFamily: {
+                sans: ['Inter', 'sans-serif'],
+                serif: ['Merriweather', 'serif'],
+            },
+            colors: {
+                primary: '#1E3A8A',
+                accent: '#2563EB'
+            }
+            }
+        }
+        }
+    </script>
+
+    <style>
+        /* small helper for reading width on large screens */
+        .content-width { max-width: 900px; margin-left:auto; margin-right:auto; }
+    </style>
+    </head>
+
+    <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 top-0 bg-white/70 dark:bg-gray-800/70 backdrop-blur border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+        <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-md bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white font-bold">MI</div>
+            <div>
+            <a href="#home" class="text-lg font-serif font-bold text-primary dark:text-blue-300">Mintos Insight</a>
+            <div class="text-xs text-gray-500 dark:text-gray-400">Digital Finance / Case Study</div>
+            </div>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-6">
+            <a href="#home" class="navlink hover:text-accent">Home</a>
+            <a href="#background" class="navlink hover:text-accent">Latar Belakang</a>
+            <a href="#theory" class="navlink hover:text-accent">Teori</a>
+            <a href="#discussion" class="navlink hover:text-accent">Pembahasan</a>
+            <a href="#conclusion" class="navlink hover:text-accent">Kesimpulan</a>
+            <a href="#references" class="navlink hover:text-accent">Referensi</a>
+            <a href="contributors.html" class="navlink hover:text-accent">Contributors</a>
+        </div>
+
+        <div class="flex items-center space-x-3">
+            <button id="theme-toggle" aria-label="toggle theme" class="p-2 rounded-md border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">🌙</button>
+
+            <!-- mobile menu button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md border border-gray-200 dark:border-gray-700">☰</button>
+        </div>
+        </div>
+
+        <!-- mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
+        <a href="#home" class="block py-2 navlink">Home</a>
+        <a href="#background" class="block py-2 navlink">Latar Belakang</a>
+        <a href="#theory" class="block py-2 navlink">Teori</a>
+        <a href="#discussion" class="block py-2 navlink">Pembahasan</a>
+        <a href="#conclusion" class="block py-2 navlink">Kesimpulan</a>
+        <a href="#references" class="block py-2 navlink">Referensi</a>
+        <a href="contributors.html" class="block py-2 navlink">Contributors</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="home" class="min-h-screen flex items-center justify-center text-center px-6 pt-20 pb-12 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
+        <div class="content-width">
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-primary dark:text-blue-300 leading-tight">Analisis Keberhasilan Transformasi Digital pada Platform P2P Lending — <span class="text-accent">Mintos (Latvia)</span></h1>
+        <p class="mt-6 text-gray-600 dark:text-gray-300 text-lg">Studi kasus komprehensif tentang bagaimana Mintos menggabungkan teknologi, tata kelola, dan keamanan untuk memperkuat inklusi keuangan lintas negara.</p>
+        <div class="mt-8 flex items-center justify-center space-x-4">
+            <a href="#about" class="px-5 py-3 rounded-lg bg-accent text-white hover:bg-blue-600 transition">Pelajari Sekilas</a>
+            <a href="#discussion" class="px-5 py-3 rounded-lg border border-gray-200 dark:border-gray-700">Lihat Pembahasan</a>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-3 gap-4">
+            <div class="p-4 rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm text-center">
+            <div class="text-2xl font-bold text-accent">+30%</div>
+            <div class="text-xs text-gray-500 dark:text-gray-400">Pertumbuhan Revenue (2023)</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm text-center">
+            <div class="text-2xl font-bold text-accent">500K+</div>
+            <div class="text-xs text-gray-500 dark:text-gray-400">Investor Aktif</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm text-center">
+            <div class="text-2xl font-bold text-accent">60+</div>
+            <div class="text-xs text-gray-500 dark:text-gray-400">Negara Terhubung</div>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <!-- ABOUT / BAB 1 -->
+    <main class="pt-8">
+        <section id="background" class="py-16 px-6">
+            <div class="content-width">
+                <h2 class="text-2xl font-serif font-bold mb-4 text-primary dark:text-blue-400">Tentang Mintos & Latar Belakang</h2>
+                <p class="text-gray-600 dark:text-gray-300">Transformasi digital dalam sektor keuangan telah mengubah cara masyarakat mengakses layanan finansial. Peer-to-Peer (P2P) lending menjadi salah satu model yang menonjol karena efisiensi dan potensinya meningkatkan inklusi keuangan. Mintos, didirikan di Latvia pada 2015 oleh Martins Sulte dan Martins Valters, berkembang menjadi marketplace investasi yang mempertemukan investor individu dengan lembaga pemberi pinjaman dari puluhan negara. Dengan pengguna ratusan ribu dan transaksi bernilai miliaran euro, Mintos menjadi contoh transformasi digital di fintech Eropa.</p>
+
+                <div class="mt-8 grid md:grid-cols-2 gap-6">
+                <article class="p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm">
+                    <h3 class="font-semibold mb-2">Peran Transformasi Digital</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Mintos mengimplementasikan machine learning untuk analisis risiko, otomasi verifikasi kredit, serta API untuk mempercepat integrasi data antar lembaga. Langkah ini meningkatkan efisiensi operasional dan transparansi.</p>
+                </article>
+
+                <article class="p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm">
+                    <h3 class="font-semibold mb-2">Dampak ke Kawasan</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Inovasi seperti yang dilakukan Mintos mendorong standar baru pada perlindungan investor, transparansi, dan tata kelola risiko lintas negara, sehingga memengaruhi kebijakan fintech di Eropa Timur.</p>
+                </article>
+                </div>
+
+                <div class="mt-8 bg-gradient-to-r from-white to-blue-50 dark:from-gray-900 dark:to-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                <h4 class="font-semibold mb-2">Mengapa studi ini penting?</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300">Kasus Mintos menggambarkan pergeseran paradigmatik dari pembiayaan tradisional ke model yang berbasis teknologi digital. Ini relevan untuk memahami performa, keberlanjutan, dan mitigasi risiko pada fintech lintas negara.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="py-24 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <h3 class="text-3xl font-serif font-bold mb-12 text-center text-primary dark:text-blue-400">
+            Mintos Growth Timeline
+            </h3>
+
+            <div class="relative border-l border-gray-300 dark:border-gray-700 ml-6">
+            <!-- Timeline item -->
+            <div class="mb-10 ml-6">
+                <div class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-primary dark:bg-blue-400 rounded-full"></div>
+                <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-100">2014</h4>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">
+                Founded as a peer-to-peer lending marketplace in Latvia.
+                </p>
+            </div>
+
+            <div class="mb-10 ml-6">
+                <div class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-primary dark:bg-blue-400 rounded-full"></div>
+                <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-100">2016</h4>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">
+                Raised €2M in seed funding and expanded to international markets.
+                </p>
+            </div>
+
+            <div class="mb-10 ml-6">
+                <div class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-primary dark:bg-blue-400 rounded-full"></div>
+                <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-100">2019</h4>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">
+                Recognized as AltFi People's Choice Award winner for the fifth year in a row.
+                </p>
+            </div>
+
+            <div class="mb-10 ml-6">
+                <div class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-primary dark:bg-blue-400 rounded-full"></div>
+                <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-100">2020</h4>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">
+                Raised €6.5M from crowdfunding investors — one of the largest in continental Europe.
+                </p>
+            </div>
+
+            <div class="mb-10 ml-6">
+                <div class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-primary dark:bg-blue-400 rounded-full"></div>
+                <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-100">2022</h4>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">
+                Launched the first loan-backed securities under MiFID regulation.
+                </p>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- THEORY / BAB 2 -->
+        <section id="theory" class="py-16 px-6 bg-gray-50 dark:bg-gray-800/40">
+            <div class="content-width">
+                <h2 class="text-2xl font-serif font-bold mb-4 text-primary dark:text-blue-400">Teori: P2P Lending</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Peer-to-peer lending adalah mekanisme yang mempertemukan pemberi pinjaman dan peminjam melalui platform digital tanpa peran bank tradisional. Model ini menawarkan efisiensi, biaya lebih rendah, dan potensi inklusi keuangan yang lebih besar, namun juga membawa tantangan regulasi, risiko kredit, dan perlindungan investor.</p>
+
+                <div class="mt-6 space-y-4">
+                <details class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+                    <summary class="font-semibold cursor-pointer">Definisi & Konteks Umum</summary>
+                    <div class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                    Peer-to-peer (P2P) lending adalah marketplace online untuk pinjaman yang menghubungkan investor dan peminjam secara langsung. Dalam konteks Eropa, regulasi seperti proposal ECSP serta berbagai aturan nasional menjadi faktor penting bagi pengembangan model ini.
+                    </div>
+                </details>
+
+                <details class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+                    <summary class="font-semibold cursor-pointer">Sejarah & Perkembangan</summary>
+                    <div class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                    P2P lending berkembang pesat sejak pertengahan 2010-an. Di banyak negara, pertumbuhan ini mendorong regulasi yang menyesuaikan perbedaan model dari perbankan tradisional, seperti POJK di Indonesia untuk layanan pinjam-meminjam berbasis teknologi.
+                    </div>
+                </details>
+
+                <details class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+                    <summary class="font-semibold cursor-pointer">Keunggulan & Tantangan</summary>
+                    <div class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                    Keunggulan: inklusi, diversifikasi investor, desentralisasi. Tantangan: regulasi, risiko kredit/likuiditas, transparansi, dan tata kelola platform.
+                    </div>
+                </details>
+                </div>
+
+                <div class="mt-6 p-4 border border-dashed border-gray-200 dark:border-gray-700 rounded-lg">
+                <h4 class="font-semibold mb-2">Referensi Teoretis</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Sumber-sumber literatur dan laporan yang mendukung analisis ini tersedia di bagian Referensi.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DISCUSSION / BAB 3 -->
+        <section id="discussion" class="py-16 px-6">
+            <div class="content-width">
+                <h2 class="text-2xl font-serif font-bold mb-4 text-primary dark:text-blue-400">Pembahasan & Opini</h2>
+
+                <article class="prose max-w-none dark:prose-invert">
+                <h3 class="text-xl font-semibold">Transformasi Digital sebagai Manifesto Inovasi</h3>
+                <p class="text-gray-600 dark:text-gray-300">Transformasi digital Mintos lebih dari respons terhadap dinamika fintech — ia merupakan wujud inovasi yang mengubah inklusi keuangan menjadi realitas praktis. Mintos menggabungkan teknologi dan tata kelola untuk menciptakan platform yang mampu menarik investor ritel lintas negara.</p>
+
+                <h4 class="mt-4 font-semibold">Data & Kinerja</h4>
+                <p class="text-gray-600 dark:text-gray-300">Menurut laporan perusahaan, Mintos menunjukkan pertumbuhan revenue sebesar 30% menjadi €11,4 juta (dari €8,8 juta pada 2022), didorong ekspansi produk seperti real estate rental dan Smart Cash. Basis pengguna mencapai ratusan ribu hingga jutaan di beberapa sumber, serta ekspansi pasar ke negara-negara seperti Portugal dan Republik Ceko.</p>
+
+                <h4 class="mt-4 font-semibold">Keamanan & Kepatuhan</h4>
+                <p class="text-gray-600 dark:text-gray-300">Mintos menekankan keamanan: penerapan two-factor authentication (2FA) via Google Authenticator, kebijakan strong password, segregasi aset investor, dan adanya skema kompensasi investor berdasarkan kerangka hukum yang relevan (contoh referensi: Directive 97/9/EC). Untuk investor di Indonesia, Mintos juga menerapkan reporting pajak lewat mekanisme CRS dan meminta TIN (NPWP) untuk verifikasi pajak.</p>
+
+                <h4 class="mt-4 font-semibold">Opini Subjektif</h4>
+                <p class="text-gray-600 dark:text-gray-300">Secara subjektif, Mintos berhasil merajut teknologi dan kepercayaan — tetapi investor tetap memegang tanggung jawab atas risiko kredit dan diversifikasi portofolio. Kasus-kasus kegagalan originator di platform lain menegaskan perlunya mitigasi risiko secara aktif.</p>
+                </article>
+
+                <!-- cards for key points -->
+                <div class="mt-8 grid md:grid-cols-3 gap-6">
+                <div class="p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm">
+                    <h4 class="font-semibold text-accent">Keunggulan Teknologi</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">ML & API meningkatkan efektivitas analisis risiko dan proses integrasi.</p>
+                </div>
+                <div class="p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm">
+                    <h4 class="font-semibold text-accent">Proteksi Investor</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Segregasi aset dan skema kompensasi memberikan lapisan proteksi tambahan.</p>
+                </div>
+                <div class="p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm">
+                    <h4 class="font-semibold text-accent">Tantangan Regulasi</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">ECSP dan aturan lintas negara menuntut adaptasi kebijakan dan kepatuhan.</p>
+                </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONCLUSION / BAB 4 -->
+        <section id="conclusion" class="py-16 px-6 bg-gray-50 dark:bg-gray-800/40">
+            <div class="content-width">
+                <h2 class="text-2xl font-serif font-bold mb-4 text-primary dark:text-blue-400">Kesimpulan & Saran</h2>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm">
+                    <h3 class="font-semibold mb-2">Kesimpulan</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                    Studi kasus Mintos menegaskan bahwa transformasi digital adalah pilar utama keberhasilan P2P lending di Eropa. Integrasi teknologi (ML, API), tata kelola yang kuat, serta praktik keamanan telah meningkatkan inklusi dan kepercayaan investor.
+                    </p>
+                    <p class="mt-3 text-xs text-gray-500 dark:text-gray-400">(Sumber: laporan Mintos & analisis terkait)</p>
+                </div>
+
+                <div class="p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm">
+                    <h3 class="font-semibold mb-2">Saran</h3>
+                    <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-300 space-y-2">
+                    <li>Aktifkan 2FA dan gunakan password unik untuk keamanan akun.</li>
+                    <li>Diversifikasi investasi (mis. < 10% per pinjaman) untuk mitigasi risiko.</li>
+                    <li>Bagi regulator: Pertimbangkan adopsi model perlindungan investor seperti yang diterapkan Mintos.</li>
+                    <li>Peneliti: Lakukan studi komparatif dengan platform Asia untuk adaptasi teknologi di pasar berkembang.</li>
+                    </ul>
+                </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- REFERENCES -->
+        <section id="references" class="py-16 px-6">
+            <div class="content-width">
+            <h2 class="text-2xl font-serif font-bold mb-6 text-primary dark:text-blue-400">
+                Daftar Pustaka & Referensi
+            </h2>
+
+            <ol class="space-y-4 text-sm text-gray-700 dark:text-gray-300 list-decimal list-inside">
+
+                <li>
+                Zetzsche, D. A., Buckley, R. P., Arner, D. W., & Barberis, J. N. (2020).  
+                <em>Decentralized finance: Governance and regulation of financial ecosystems.</em>  
+                University of New South Wales Law Journal, 43(3), 1023–1056.
+                </li>
+
+                <li>
+                World Bank. (2021).  
+                <em>The Global Findex Database 2021: Financial inclusion, digital payments, and resilience in the age of COVID-19.</em>  
+                Washington, DC: World Bank Group.
+                </li>
+
+                <li>
+                Mintos Ltd. (2023).  
+                <em>About Mintos: Annual Company Report 2023.</em> Riga, Latvia.
+                </li>
+
+                <li>
+                European Crowdfunding Network. (2022).  
+                <em>Annual report on alternative finance in Europe.</em> Brussels.
+                </li>
+
+                <li>
+                Puschmann, T. (2017).  
+                <em>FinTech.</em> Business & Information Systems Engineering, 59(1), 69–76.
+                </li>
+
+                <li>
+                European Banking Authority (EBA). (2021).  
+                <em>Report on digital finance and innovation.</em> Luxembourg.
+                </li>
+
+                <li>
+                Didenko, A. N., & Buckley, R. P. (2020).  
+                <em>FinTech and the future of financial regulation in the EU.</em> Cambridge, UK: Cambridge University Press.
+                </li>
+
+                <li>
+                Gai, K., Qiu, M., & Sun, X. (2018).  
+                <em>A survey on FinTech.</em> Journal of Network and Computer Applications, 103, 262–273.
+                </li>
+
+                <li>
+                Jørgensen, T. (2018).  
+                <em>Peer-to-peer lending: A new digital intermediary and new legal challenges.</em>  
+                Nordic Journal of Commercial Law, 2018(1), 260–331.  
+                DOI: 10.5278/ojs.njcl.v0i1.2491
+                </li>
+
+                <li>
+                Lemma, V. (2020).  
+                <em>FinTech regulation: Exploring new challenges of the Capital Markets Union.</em>  
+                Cham, Switzerland: Springer. DOI: 10.1007/978-3-030-42347-6
+                </li>
+
+                <li>
+                Ferretti, F. (2021).  
+                <em>Peer-to-peer lending and EU credit laws.</em>  
+                German Law Journal, 22(1), 102–121.
+                </li>
+
+                <li>
+                Rabbani, M. R., Bashar, A., Hawaldar, I. T., Shaik, M., & Selim, M. (2022).  
+                <em>What do we know about crowdfunding and P2P lending research?</em>  
+                Journal of Risk and Financial Management, 15(10), 451.  
+                DOI: 10.3390/jrfm15100451
+                </li>
+
+                <li>
+                Laylan, N. (2024).  
+                <em>Perlindungan hukum terhadap layanan transaksi fintech peer-to-peer lending di Indonesia.</em>  
+                Sriwijaya Journal of Private Law, 1(2).
+                </li>
+
+                <li>
+                Ofir, M., & Tzang, I. (2019).  
+                <em>An empirical view of peer-to-peer lending platforms.</em>
+                </li>
+
+                <li>
+                Febryana, R. P. (2023).  
+                <em>Balancing personal data protection and peer-to-peer lending: Legal uncertainties.</em>
+                </li>
+
+                <li>
+                ———. (2023).  
+                <em>Success factors influencing peer-to-peer lending to support financial inclusion.</em>  
+                Sustainability, 15(5), 4028. DOI: 10.3390/su15054028
+                </li>
+
+                <li>
+                Wu, H., Wang, B., Wang, H., & Zhao, T. (2022).  
+                <em>Online peer-to-peer lending platform and supply chain finance.</em>  
+                Annals of Operations Research.
+                </li>
+
+                <li>
+                Mintos Ltd. (2025).  
+                <em>2024 Consolidated Annual Report — AS Mintos Holdings.</em> Riga, Latvia.
+                </li>
+
+                <li>
+                Mintos Ltd. (2025).  
+                <em>Investor Protection on Mintos.</em>
+                </li>
+
+                <li>
+                Mintos Ltd. (2025).  
+                <em>Protect Your Account: Cybersecurity.</em>
+                </li>
+
+                <li>
+                Mintos Ltd. (2025).  
+                <em>2024 Tax Report Insights — Your Quick Guide.</em>
+                </li>
+
+            </ol>
+
+            <p class="mt-6 text-xs text-gray-500 dark:text-gray-400">
+                Catatan: Beberapa sumber daring dan publikasi internal perusahaan digunakan sebagai referensi pendukung kebijakan operasional dan teknis platform Mintos.
+            </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-8 border-t border-gray-200 dark:border-gray-700 mt-6">
+        <div class="content-width text-center text-sm text-gray-600 dark:text-gray-400">
+        © 2025 Mintos Insight — Created by Pennnn. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="assets/js/script.js"></script>
+    </body>
+</html>
