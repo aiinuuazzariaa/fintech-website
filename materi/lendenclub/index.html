@@ -309,7 +309,7 @@
 
   <script>
     async function loadMarkdown() {
-      const response = await fetch("../README.md");
+      const response = await fetch("./README.md");
       let markdownText = await response.text();
 
       // Highlight text (==text==)
