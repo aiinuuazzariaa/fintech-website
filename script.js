@@ -9,7 +9,7 @@ const projects = [
   },
   {
     "title": "LenDenClub: Platform P2P Lending Terpercaya dari India",
-    "description": "LenDenClub adalah platform peer-to-peer (P2P) lending yang menghubungkan pemberi pinjaman individu dengan peminjam terverifikasi secara langsung tanpa bank sebagai perantara. Sejak didirikan pada 2015 dan dinaungi regulasi Reserve Bank of India (RBI) sebagai NBFC-P2P, LenDenClub menawarkan proses 100% digital, diversifikasi pinjaman, dan tingkat bunga menarik bagi pemberi pinjaman.",
+    "description": "LenDenClub adalah platform peer-to-peer (P2P) lending yang menghubungkan pemberi pinjaman individu dengan peminjam terverifikasi secara langsung tanpa bank sebagai perantara.",
     "tags": ["322310010 - Demitri Fernando Putra Aryandi Gledek", "322310021 - Ainu Azzaria"],
     "featured": false,
     "demoLink": "/materi/lendenclub",
