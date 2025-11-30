@@ -8,8 +8,8 @@ const projects = [
     "repoLink": null
   },
   {
-    "title": "P2P Lending (LenDenClub)",
-    "description": "Studi kasus komprehensif tentang bagaimana Mintos menggabungkan teknologi, tata kelola, dan keamanan untuk memperkuat inklusi keuangan lintas negara.",
+    "title": "LenDenClub: Platform P2P Lending Terpercaya dari India",
+    "description": "LenDenClub adalah platform peer-to-peer (P2P) lending yang menghubungkan pemberi pinjaman individu dengan peminjam terverifikasi secara langsung — tanpa bank sebagai perantara.",
     "tags": ["322310010 - Demitri Fernando Putra Aryandi Gledek", "322310021 - Ainu Azzaria"],
     "featured": false,
     "demoLink": "/materi/lendenclub",
