@@ -12,7 +12,7 @@ const projects = [
     "description": "LenDenClub adalah platform peer-to-peer (P2P) lending yang menghubungkan pemberi pinjaman individu dengan peminjam terverifikasi secara langsung tanpa bank sebagai perantara.",
     "tags": ["322310010 - Demitri Fernando Putra Aryandi", "322310021 - Ainu Azzaria"],
     "featured": false,
-    "demoLink": "https://aiinuuazzariaa.github.io/LenDenClub/",
+    "demoLink": "materi/lendenclub",
     "repoLink": "https://github.com/aiinuuazzariaa/LenDenClub"
   },
 ];
