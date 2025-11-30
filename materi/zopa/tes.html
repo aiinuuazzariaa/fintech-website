@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studi Kasus: Transformasi Zopa dari P2P ke Bank Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --color-primary: #4f46e5; /* Indigo */
+            --color-secondary: #3b82f6; /* Blue */
+            --color-accent: #10b981; /* Emerald Green */
+            --color-light: #f9fafb;
+            --color-dark: #1f2937;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-light);
+            color: var(--color-dark);
+            transition: all 0.5s ease-in-out;
+        }
+        /* Dark Mode Styles */
+        body.dark {
+            background-color: #111827; /* Darker Background */
+            color: #d1d5db;
+        }
+        body.dark .bg-white { background-color: #1f2937; }
+        body.dark .content-card { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2); }
+        body.dark .chapter-title { border-left-color: var(--color-accent); color: #6366f1; } /* Indigo-500 */
+        body.dark .link-item:hover { background-color: #374151; border-left-color: var(--color-accent); }
+        body.dark .concept-container { background-color: #1f2937; }
+        body.dark .bg-indigo-50 { background-color: #1f2937; border-color: #4f46e5; }
+
+        .container {
+            max-width: 1024px;
+            margin: auto;
+            padding: 0 1rem;
+        }
+        .chapter-title {
+            border-left: 6px solid var(--color-primary);
+            padding-left: 1.25rem;
+            color: var(--color-dark);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .content-card {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .paragraph-text {
+            text-indent: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+        /* Override bolding in paragraph text for specific elements */
+        .paragraph-text !important {
+             font-weight: 400 !important;
+        }
+        .link-item {
+            transition: all 0.3s ease;
+        }
+        .link-item:hover {
+            border-left: 5px solid var(--color-accent);
+            background-color: #ecfdf5; /* Light Emerald */
+            transform: translateY(-2px);
+        }
+        /* Style for interactive concept buttons */
+        .concept-btn {
+            @apply px-5 py-2 text-sm font-semibold rounded-full transition duration-300 shadow-md;
+        }
+        .concept-btn:not(.active) {
+            @apply bg-gray-200 text-gray-700 hover:bg-indigo-100 hover:text-indigo-800 dark:bg-gray-600 dark:text-gray-200 dark:hover:bg-indigo-900;
+        }
+        .concept-btn.active {
+            @apply bg-indigo-600 text-white shadow-lg shadow-indigo-500/50;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white shadow-xl border-t-8 border-indigo-600 pt-12 pb-16 transition duration-500">
+        <div class="container text-center">
+            <p class="text-sm font-semibold uppercase tracking-widest text-indigo-500 mb-3">Studi Kasus Sistem Informasi | Teknologi Keuangan</p>
+            <h1 class="text-6xl font-extrabold text-gray-900 dark:text-gray-100 mb-4 tracking-tight leading-snug">
+                Transformasi Zopa: Evolusi P2P ke Bank Digital
+            </h1>
+            <div class="lg:text-xl text-gray-600 dark:text-gray-400 mb-8 font-medium">
+                Analisis Adopsi Teknologi Kunci dalam Industri Finansial
+            </div>
+            <div class="flex justify-center space-x-6 text-base font-medium text-indigo-700 dark:text-indigo-300 flex-wrap">
+                <span class="m-1"><i class="fas fa-user-graduate mr-2"></i> AVELINE ONG - 322310007</span>
+                <span class="m-1"><i class="fas fa-user-graduate mr-2"></i> LETSYIA AGATHA SURYA PUTRI - 322310014</span>
+            </div>
+            <p class="mt-4 text-sm text-gray-500 dark:text-gray-500">
+                FAKULTAS TEKNOLOGI DAN DESAIN - UNIVERSITAS MA CHUNG - 2025
+            </p>
+        </div>
+    </header>
+
+    <nav class="bg-gray-800 sticky top-0 z-50 shadow-2xl transition duration-500">
+        <div class="container flex justify-between items-center py-3 text-sm font-semibold">
+            <div class="flex space-x-3 md:space-x-6">
+                <a href="#pendahuluan" class="text-white hover:text-amber-400 transition duration-200">PENDAHULUAN</a>
+                <a href="#teori" class="text-white hover:text-amber-400 transition duration-200">TEORI</a>
+                <a href="#pembahasan" class="text-white hover:text-amber-400 transition duration-200">PEMBAHASAN</a>
+                <a href="#kesimpulan" class="text-white hover:text-amber-400 transition duration-200">KESIMPULAN</a>
+                <a href="#referensi" class="text-white hover:text-amber-400 transition duration-200">REFERENSI</a>
+            </div>
+            <button id="darkModeToggle" class="text-white p-2 rounded-full hover:bg-gray-700 transition duration-200 focus:outline-none">
+                <i class="fas fa-moon" id="moonIcon"></i>
+                <i class="fas fa-sun hidden" id="sunIcon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container py-16">
+        <div class="bg-white p-8 md:p-12 rounded-3xl content-card transition duration-500">
+
+            <section id="daftar-isi" class="mb-14 p-6 bg-indigo-50 rounded-2xl border-2 border-indigo-200 dark:border-indigo-600 transition duration-500">
+                <h2 class="text-2xl font-bold text-indigo-800 dark:text-indigo-300 mb-4 flex items-center transition duration-500">
+                    <i class="fas fa-list-ul mr-3"></i> DAFTAR ISI
+                </h2>
+                <div class="text-base text-gray-700 dark:text-gray-300 space-y-1 transition duration-500">
+                    <div class="flex justify-between border-b border-indigo-200 dark:border-indigo-700 pb-1 font-semibold text-indigo-600 dark:text-indigo-400">
+                        <span>DAFTAR ISI</span>
+                        <span>2</span>
+                    </div>
+                    <a href="#pendahuluan" class="flex justify-between pt-2 link-item p-1 -mx-1 rounded-lg">
+                        <span>BAB I. PENDAHULUAN</span>
+                        <span>3</span>
+                    </a>
+                    <a href="#latar-belakang" class="flex justify-between pl-4 link-item p-1 -mx-1 rounded-lg">
+                        <span>1.1. Latar Belakang</span>
+                        <span>3</span>
+                    </a>
+                    <a href="#teori" class="flex justify-between pl-4 link-item p-1 -mx-1 rounded-lg">
+                        <span>1.2. Teori</span>
+                        <span>4</span>
+                    </a>
+                    <a href="#pembahasan" class="flex justify-between pl-4 link-item p-1 -mx-1 rounded-lg">
+                        <span>1.3. Pembahasan</span>
+                        <span>5</span>
+                    </a>
+                    <a href="#kesimpulan" class="flex justify-between pl-4 link-item p-1 -mx-1 rounded-lg">
+                        <span>1.4. Kesimpulan dan Saran</span>
+                        <span>6</span>
+                    </a>
+                </div>
+            </section>
+
+            <section id="pendahuluan" class="mb-12">
+                <h2 class="text-4xl font-extrabold mb-10 text-center text-gray-800 dark:text-gray-100 transition duration-500 border-b pb-4">BAB I: PENDAHULUAN</h2>
+
+                <h3 id="latar-belakang" class="chapter-title text-3xl mb-8 transition duration-500">1.1. Latar Belakang dan Sejarah Zopa</h3>
+                <div class="text-gray-700 dark:text-gray-300 transition duration-500 text-lg">
+                    <p class="paragraph-text">Zopa pertama kali didirikan di Inggris pada tahun 2005 dan dikenal sebagai pelopor utama dalam sistem peer-to-peer lending (P2P lending) modern. Konsep yang diusung Zopa pada masa awal pendiriannya berlandaskan pada gagasan untuk meniadakan peran lembaga keuangan tradisional seperti bank dalam proses peminjaman dana. Melalui pendekatan digital, para individu diberi kesempatan untuk saling meminjamkan uang secara langsung dalam sebuah ekosistem daring yang aman, transparan, dan efisien. Model tersebut dirancang untuk memberikan keuntungan bagi kedua belah pihak—peminjam memperoleh bunga yang lebih rendah, sedangkan pemberi pinjaman mendapatkan imbal hasil yang lebih tinggi dibandingkan dengan produk simpanan konvensional. Selama satu dekade pertama operasinya, sistem Zopa berkembang pesat seiring meningkatnya kepercayaan publik terhadap model ekonomi berbasis digital. Zopa menjadi simbol perubahan dalam industri keuangan global karena keberhasilannya membangun kepercayaan berbasis teknologi di sektor yang selama ini sangat bergantung pada perantara institusional. Melalui inovasinya, Zopa tidak hanya memperkenalkan model bisnis baru, tetapi juga memicu munculnya berbagai platform serupa di berbagai negara.</p>
+
+                    <p class="paragraph-text">Seiring berjalannya waktu, Zopa melakukan transformasi besar untuk menyesuaikan diri dengan dinamika regulasi dan perkembangan teknologi finansial. Platform ini kemudian memperoleh lisensi perbankan resmi dari Financial Conduct Authority (FCA) dan Prudential Regulation Authority (PRA) pada tahun 2020, yang menandai peralihannya dari perusahaan P2P. Dalam tahap ini, teknologi menjadi fondasi utama keberlangsungan operasional Zopa. Sistem keamanan siber berbasis cloud computing, machine learning, serta pemanfaatan application programming interface (API) terbuka digunakan untuk memastikan integrasi yang efisien antara layanan pinjaman, tabungan, dan kartu kredit. Teknologi analitik data diterapkan untuk menilai risiko kredit secara akurat, sementara sistem otomatisasi transaksi memungkinkan proses keuangan dilakukan secara real time tanpa keterlibatan manusia secara langsung. Melalui kombinasi teknologi tersebut, Zopa tidak hanya meningkatkan efisiensi operasional, tetapi juga memperkuat keandalan dan keamanan data nasabah, menjadikannya contoh sukses penerapan financial technology yang berorientasi pada keberlanjutan.</p>
+
+                    <p class="paragraph-text">Transformasi Zopa dari platform P2P menjadi bank digital membawa dampak signifikan terhadap perekonomian, baik di tingkat mikro maupun makro. Dalam konteks mikro, Zopa berhasil memperluas akses pembiayaan bagi masyarakat yang sebelumnya sulit dijangkau oleh lembaga keuangan tradisional, sehingga mendorong peningkatan inklusi finansial. Model bisnisnya yang efisien juga memberikan alternatif investasi baru bagi individu yang ingin memperoleh imbal hasil melalui pendanaan langsung. Di sisi lain, dalam konteks makro, keberadaan Zopa berkontribusi terhadap pertumbuhan sektor fintech Inggris yang kini menjadi salah satu yang terkuat di dunia. Keberhasilan perusahaan ini membuktikan bahwa inovasi finansial dapat berjalan seiring dengan kepatuhan terhadap regulasi dan stabilitas sistem keuangan. Dengan demikian, evolusi Zopa tidak hanya menggambarkan perubahan model bisnis, tetapi juga menandai pergeseran paradigma ekonomi digital di mana teknologi, kepercayaan, dan efisiensi menjadi inti dari sistem keuangan masa depan.</p>
+                </div>
+
+                <h3 id="teori" class="chapter-title text-3xl mt-16 mb-8 transition duration-500">1.2. Kerangka Teori: Fintech dan Disintermediation</h3>
+                <div class="text-gray-700 dark:text-gray-300 transition duration-500 text-lg">
+                    <p class="paragraph-text">Konsep utama yang melandasi berdirinya Zopa adalah financial technology (fintech), khususnya dalam bidang peer-to-peer lending. Fintech merupakan inovasi dalam industri keuangan yang memanfaatkan teknologi digital untuk meningkatkan efisiensi, aksesibilitas, dan transparansi dalam layanan keuangan. Sistem P2P lending sendiri memungkinkan individu untuk saling meminjamkan dana tanpa perantara lembaga keuangan tradisional seperti bank. Model ini berangkat dari teori disintermediation, yaitu penghapusan peran pihak ketiga dalam transaksi keuangan. Tujuan utamanya adalah menciptakan sistem yang lebih terbuka, cepat, dan terjangkau bagi masyarakat luas.</p>
+
+                    <p class="paragraph-text">Dalam kerangka ekonomi digital, fintech berperan penting dalam mempercepat inklusi keuangan dan mendorong efisiensi ekonomi. Melalui integrasi antara teknologi informasi, analitik data, dan sistem pembayaran daring, fintech mampu memperluas jangkauan layanan keuangan hingga ke masyarakat yang sebelumnya tidak terlayani oleh sistem perbankan konvensional (unbanked population). Dengan demikian, konsep yang diusung Zopa mencerminkan penerapan nyata teori inovasi finansial dalam praktik ekonomi modern.</p>
+
+                    <p class="paragraph-text">Zopa merupakan perusahaan asal Inggris yang awalnya dikenal sebagai pelopor sistem peer-to-peer lending modern. Nama “Zopa” berasal dari istilah ekonomi “Zone of Possible Agreement”, yang berarti wilayah kesepakatan yang saling menguntungkan antara dua pihak. Didirikan pada tahun 2005 oleh sekelompok mantan eksekutif dari perusahaan Egg Banking, Zopa memanfaatkan teknologi internet untuk mempertemukan pemberi pinjaman dan peminjam secara langsung.
+                    Selama lebih dari satu dekade, Zopa berhasil membangun reputasi sebagai salah satu platform P2P paling aman dan terpercaya di Inggris. Namun, pada tahun 2020, Zopa memutuskan untuk melakukan transformasi menjadi bank digital penuh setelah mendapatkan lisensi dari Financial Conduct Authority (FCA) dan Prudential Regulation Authority (PRA). Sejak saat itu, Zopa Bank menawarkan layanan keuangan yang lebih luas, termasuk produk tabungan, kartu kredit, dan pinjaman personal, sambil tetap mempertahankan nilai-nilai inovatif dan transparan yang menjadi ciri khasnya sejak awal berdiri.
+                    </p>
+                </div>
+
+                <h3 id="pembahasan" class="chapter-title text-3xl mt-16 mb-8 transition duration-500">1.3. Pembahasan/Opini Subjektif: Teknologi, Kepercayaan, dan Jaminan Finansial Zopa</h3>
+                <div class="text-gray-700 dark:text-gray-300 transition duration-500 text-lg">
+                    
+                    <div class="p-6 bg-yellow-50 dark:bg-yellow-900/30 rounded-xl border-l-4 border-yellow-500 shadow-lg mb-8">
+                        <p class="font-bold text-xl text-yellow-800 dark:text-yellow-300 mb-3 flex items-center">
+                            <i class="fas fa-comment-dots mr-3"></i> Sudut Pandang Subjektif: Keamanan dan Kepercayaan Digital
+                        </p>
+                        <p class="paragraph-text !text-indent-0">
+                            
+                            Secara subjektif, keberhasilan Zopa Bank, terutama pada produk tabungannya (Smart Saver), terletak pada dua hal: keberanian inovasi dan kepatuhan yang ketat. Di satu sisi, Zopa beroperasi sebagai perusahaan teknologi yang lincah dengan fondasi Machine Learning dan Cloud Computing untuk memberikan layanan yang efisien. Namun, yang paling krusial—dan menjadi ‘jembatan kepercayaan’-nya—adalah adanya jaminan keamanan finansial FSCS yang melindungi dana nasabah hingga £85.000. Di balik itu, Zopa juga menghadapi beban perusahaan yang cukup besar, mulai dari biaya tinggi untuk menjaga keamanan teknologi melalui enkripsi data, autentikasi berlapis, dan pemantauan siber, hingga pengelolaan keamanan finansial dengan penyimpanan dana di lembaga keuangan terpisah yang diawasi oleh FCA. Dengan jumlah pengguna yang terus meningkat, Zopa juga menanggung beban infrastruktur digital dan layanan pelanggan yang semakin kompleks. Meski demikian, dari sisi akuntabilitas, Zopa menunjukkan praktik good governance yang baik melalui transparansi operasional, kepatuhan terhadap regulasi, serta tanggung jawab dalam menjaga stabilitas dan kepercayaan publik terhadap sistem perbankan digitalnya.
+
+                        </p>
+                        <p class="paragraph-text !text-indent-0 mt-3">
+                            FSCS adalah schema kompensasi jasa keuangan, ia mengambil risiko inheren dari inovasi fintech dan mengembalikannya ke kerangka keamanan bank tradisional. Ini menunjukkan bahwa Zopa memahami bahwa trust di era digital tidak lagi dibangun melalui kehadiran fisik kantor cabang, melainkan melalui kredibilitas sistem digital yang diatur (oleh FCA/PRA) dan dijamin keamanannya, didukung oleh sistem cybersecurity dan keanggotaan dalam asosiasi anti-fraud seperti Cifas. Zopa berhasil menjual keyakinan nasabah pada sistem digital melalui perpaduan teknologi canggih dan jaminan resmi.
+                        </p>
+                    </div>
+                    
+                    <h4 class="text-xl font-bold text-indigo-700 dark:text-indigo-400 mt-8 mb-4 flex items-center"><i class="fas fa-microchip mr-2"></i> Pilar Utama Teknologi Zopa Bank</h4>
+                    
+                    <div class="concept-container bg-gray-100 dark:bg-gray-800 p-6 rounded-xl transition duration-500">
+                        <div class="flex flex-wrap gap-3 mb-6" id="conceptButtons">
+                            <button class="concept-btn active" data-concept="ml"><i class="fas fa-brain mr-1"></i> Machine Learning</button>
+                            <button class="concept-btn" data-concept="cloud"><i class="fas fa-cloud mr-1"></i> Cloud Computing</button>
+                            <button class="concept-btn" data-concept="api"><i class="fas fa-exchange-alt mr-1"></i> Open API</button>
+                            <button class="concept-btn" data-concept="security"><i class="fas fa-shield-alt mr-1"></i> Keamanan Siber</button>
+                        </div>
+
+                        <div id="conceptContent" class="p-6 rounded-lg bg-white dark:bg-gray-900 border-t-4 border-indigo-600 shadow-xl transition duration-500">
+                            <p class="font-bold text-xl text-indigo-700 dark:text-indigo-400 mb-3" id="conceptTitle">Machine Learning (ML) untuk Akurasi Risiko</p>
+                            <p class="text-gray-700 dark:text-gray-300" id="conceptText">
+                                Teknologi ini digunakan untuk menganalisis data perilaku nasabah dan menilai kelayakan kredit secara otomatis dengan tingkat akurasi yang tinggi. Dengan algoritma pembelajaran mesin, Zopa dapat mengidentifikasi pola risiko berdasarkan data historis, mengurangi tingkat default (gagal bayar), dan memperluas akses pembiayaan (financial inclusion).
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <p class="paragraph-text mt-8">Secara keseluruhan, inovasi teknologi yang diterapkan Zopa tidak hanya berfokus pada peningkatan efisiensi operasional, tetapi juga pada pembentukan kepercayaan digital (digital trust). Dalam industri keuangan modern, kepercayaan kini dibangun melalui kredibilitas sistem digital yang aman, transparan, dan andal, bukan lagi hanya melalui kantor cabang fisik. Zopa berhasil menciptakan keseimbangan antara kemudahan akses, keamanan, dan kepatuhan terhadap regulasi.</p>
+                </div>
+
+                <h3 id="kesimpulan" class="chapter-title text-3xl mt-16 mb-8 transition duration-500">1.4. Kesimpulan dan Saran</h3>
+                <div class="text-gray-700 dark:text-gray-300 transition duration-500 text-lg">
+                    <div class="p-6 bg-green-50 dark:bg-green-900/40 rounded-xl border-l-4 border-green-500 mb-8 transition duration-500">
+                        <p class="font-bold text-xl text-green-800 dark:text-green-300 mb-2"><i class="fas fa-check-circle mr-2"></i> Kesimpulan</p>
+                        <p class="paragraph-text !text-indent-0">Transformasi Zopa adalah evolusi strategis yang menegaskan peran sentral fintech dalam industri perbankan. Pemanfaatan machine learning, cloud computing, API, dan sistem keamanan siber canggih telah memungkinkan Zopa menciptakan layanan keuangan yang lebih inklusif, efisien, dan terpercaya. Keberhasilan Zopa membuktikan bahwa teknologi adalah fondasi bagi sistem keuangan yang stabil dan berkelanjutan, bukan ancaman bagi perbankan tradisional.</p>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-gray-800 dark:text-gray-200 mt-8 mb-4 flex items-center"><i class="fas fa-lightbulb mr-2"></i> Saran Pengembangan</h4>
+                    <ol class="list-decimal list-inside pl-6 space-y-3">
+                        <li class="pl-2">Penguatan Keamanan: Zopa perlu terus memperkuat sistem keamanan sibernya secara proaktif, terutama dengan meningkatnya risiko kejahatan digital, mungkin melalui adopsi Quantum-Resistant Cryptography.</li>
+                        <li class="pl-2">Adopsi GenAI: Disarankan untuk memperluas penggunaan Generative AI (GenAI) dalam layanan pelanggan, personalisasi produk, dan deteksi penipuan yang lebih kompleks.</li>
+                        <li class="pl-2">Ekspansi Global: Zopa dapat mempertimbangkan ekspansi ke pasar global baru, khususnya di negara-negara berkembang dengan tingkat literasi keuangan digital yang sedang tumbuh.</li>
+                        <li class="pl-2">Teladan Regulator: Model Zopa harus dijadikan contoh bagi pemerintah dan regulator dalam merancang kebijakan pengawasan fintech yang inovatif namun tetap berorientasi pada perlindungan konsumen.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="referensi" class="mt-16 border-t pt-8 border-gray-200 dark:border-gray-700">
+                <h3 class="chapter-title text-3xl mb-8 transition duration-500">Daftar Pustaka & Sumber Aktual</h3>
+                
+                <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Daftar Pustaka Akademik:</h4>
+                <ul class="list-none space-y-3 text-gray-700 dark:text-gray-300 text-sm">
+                    <li class="pl-8 text-justify leading-relaxed indent-[-2rem] border-l-2 border-transparent hover:border-indigo-400 transition duration-300">Prosser, D. (2015, March 6). Happy Birthday Zopa, The Inventor Of P2P. *Forbes*. [Link]</li>
+                    <li class="pl-8 text-justify leading-relaxed indent-[-2rem] border-l-2 border-transparent hover:border-indigo-400 transition duration-300">“Baptism by fire: Talking with Zopa’s Jaidev Janardana”. (n.d.). *McKinsey*. [Link]</li>
+                    <li class="pl-8 text-justify leading-relaxed indent-[-2rem] border-l-2 border-transparent hover:border-indigo-400 transition duration-300">“Zopa’s journey from P2P pioneer to challenger bank”. (2021, December 8). *Alternative Credit Investor*. [Link]</li>
+                    <li class="pl-8 text-justify leading-relaxed indent-[-2rem] border-l-2 border-transparent hover:border-indigo-400 transition duration-300">“About – Zopa”. (n.d.). *Zopa*. [Link]</li>
+                </ul>
+
+                <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mt-8 mb-4">Sumber Berita Terkini (Aktualisasi):</h4>
+                <div class="space-y-3">
+                    <a href="https://www.theguardian.com/money/2025/jun/28/zopa-current-account-cashback-savings-fee-free-travel" target="_blank" class="link-item flex items-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600">
+                        <i class="fas fa-newspaper mr-3 text-indigo-500"></i>
+                        <span class="font-semibold text-gray-800 dark:text-gray-100">The Guardian:</span>
+                        <span class="ml-2 text-gray-600 dark:text-gray-300">Zopa launches current account with cashback and 7.1% on savings</span>
+                    </a>
+                    <a href="https://fintech.global/2024/12/09/uk-digital-bank-zopa-secures-68m-to-drive-genai-and-current-account-launch/" target="_blank" class="link-item flex items-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600">
+                        <i class="fas fa-newspaper mr-3 text-indigo-500"></i>
+                        <span class="font-semibold text-gray-800 dark:text-gray-100">Fintech Global:</span>
+                        <span class="ml-2 text-gray-600 dark:text-gray-300">UK digital bank Zopa secures £68m to drive GenAI and current account launch</span>
+                    </a>
+                    <a href="https://www.fintechfutures.com/m-a/zopa-acquires-rvvup" target="_blank" class="link-item flex items-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600">
+                        <i class="fas fa-newspaper mr-3 text-indigo-500"></i>
+                        <span class="font-semibold text-gray-800 dark:text-gray-100">FinTech Futures:</span>
+                        <span class="ml-2 text-gray-600 dark:text-gray-300">Zopa buys Rvvup to expand retail finance offering</span>
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8 mt-16 shadow-inner">
+        <div class="container text-center text-sm">
+            <p>&copy; 2025 - Studi Kasus. All Rights Reserved.</p>
+            <p class="mt-1 text-gray-400">PROGRAM STUDI SISTEM INFORMASI | UNIVERSITAS MA CHUNG</p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Data for Interactive Concepts
+        const concepts = [
+            { id: 'ml', title: 'Machine Learning (ML) untuk Akurasi Risiko', text: 'Teknologi ini digunakan untuk menganalisis data perilaku nasabah dan menilai kelayakan kredit secara otomatis dengan tingkat akurasi yang tinggi. Dengan algoritma pembelajaran mesin, Zopa dapat mengidentifikasi pola risiko berdasarkan data historis, mengurangi tingkat default (gagal bayar), dan memperluas akses pembiayaan (financial inclusion).' },
+            { id: 'cloud', title: 'Infrastruktur Inti: Cloud Computing', text: 'Dengan sistem berbasis cloud, seluruh data nasabah, transaksi, dan proses analisis dapat dilakukan secara real time dan aman, tanpa ketergantungan pada server fisik. Hal ini memungkinkan Zopa untuk memproses ribuan transaksi dalam hitungan detik (high availability) dan memberikan fleksibilitas untuk mengembangkan fitur baru secara cepat melalui scalable architecture.' },
+            { id: 'api', title: 'Application Programming Interface (API) Terbuka', text: 'Zopa memanfaatkan API terbuka untuk mendukung integrasi antar-layanan digital. Melalui API, sistem Zopa dapat berinteraksi dengan platform keuangan lain secara aman dan efisien. Hal ini menjadi kunci utama dalam pengembangan ekosistem open banking, di mana nasabah dapat mengakses berbagai layanan dari satu platform terpadu.' },
+            { id: 'security', title: 'Cybersecurity dan Trust Digital', text: 'Dari sisi keamanan, Zopa menerapkan sistem cybersecurity berbasis enkripsi tingkat tinggi dan multi-factor authentication (MFA) untuk melindungi data pengguna dari ancaman kebocoran. Ini adalah fondasi penting untuk membangun kepercayaan digital (digital trust) yang vital dalam industri keuangan modern.' }
+        ];
+
+        // 2. Function to handle concept button clicks
+        function showConcept(conceptId) {
+            const selectedConcept = concepts.find(c => c.id === conceptId);
+            if (!selectedConcept) return;
+
+            // Update Content
+            document.getElementById('conceptTitle').textContent = selectedConcept.title;
+            document.getElementById('conceptText').innerHTML = selectedConcept.text; // Use innerHTML for formatting like <i>
+
+            // Update Button Active State
+            document.querySelectorAll('.concept-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-concept="${conceptId}"]`).classList.add('active');
+        }
+
+        // 3. Attach event listeners to concept buttons
+        document.getElementById('conceptButtons').addEventListener('click', (event) => {
+            if (event.target.classList.contains('concept-btn')) {
+                const conceptId = event.target.getAttribute('data-concept');
+                showConcept(conceptId);
+            }
+        });
+
+        // 4. Dark Mode Toggle Script
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const moonIcon = document.getElementById('moonIcon');
+        const sunIcon = document.getElementById('sunIcon');
+        const body = document.body;
+
+        // Check local storage or system preference for initial state
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const savedTheme = localStorage.getItem('theme');
+
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            body.classList.add('dark');
+            moonIcon.classList.add('hidden');
+            sunIcon.classList.remove('hidden');
+        } else {
+            body.classList.remove('dark');
+            moonIcon.classList.remove('hidden');
+            sunIcon.classList.add('hidden');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            
+            // Toggle icons
+            moonIcon.classList.toggle('hidden');
+            sunIcon.classList.toggle('hidden');
+
+            // Save preference
+            if (body.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+</body>
+</html>

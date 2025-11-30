@@ -15,6 +15,14 @@ const projects = [
     "demoLink": "materi/lendenclub",
     "repoLink": "https://github.com/aiinuuazzariaa/LenDenClub"
   },
+  {
+    "title": "Transformasi Zopa: Evolusi P2P ke Bank Digital",
+    "description": "Analisis Adopsi Teknologi Kunci dalam Industri Finansial.",
+    "tags": ["322310007 - Aveline Ong", "322310014 - Letsyia Agatha Surya Putri"],
+    "featured": false,
+    "demoLink": "materi/zopa",
+    "repoLink": null
+  },
 ];
 
 function renderProjects(filtered) {
