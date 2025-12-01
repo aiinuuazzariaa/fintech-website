@@ -31,6 +31,14 @@ const projects = [
     "demoLink": "/materi/fsmalaysia",
     "repoLink": "https://github.com/FelixChrisyanto/Teknologi_Keuanganfelixtrevin.git"
   },
+  {
+    "title": "Merevolusi Pembiayaan UMKM di Asia Tenggara",
+    "description": "Segala sesuatu yang perlu anda ketahui tentang perkembangan teknologi dan keuangan PeerBerry.",
+    "tags": ["322310003 - Ruben Nathanael", "322310009 - David Augusto"],
+    "featured": false,
+    "demoLink": "/materi/peerberry",
+    "repoLink": "hhttps://github.com/breakthelimit775-cloud/FINTECH.git"
+  },
 ];
 
 function renderProjects(filtered) {
