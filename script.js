@@ -5,7 +5,7 @@ const projects = [
     "tags": ["322310016 - So Osvaldo", "322310017 - Stevan Dean Achmad Ngunardi"],
     "featured": false,
     "demoLink": "/materi/mintos",
-    "repoLink": null
+    "repoLink": "https://github.com/Stevandean/Mintos-Latvia"
   },
   {
     "title": "Analisis Platform P2P Lending LenDenClub: Kinerja, Mekanisme, dan Potensi Risiko",
@@ -29,7 +29,7 @@ const projects = [
     "tags": ["322310012 - Felix Chrisyanto", "322310019 - Trevin Yoris Kenjiro"],
     "featured": false,
     "demoLink": "/materi/fsmalaysia",
-    "repoLink": "https://github.com/FelixChrisyanto/Teknologi_Keuanganfelixtrevin.git"
+    "repoLink": "https://github.com/FelixChrisyanto/Teknologi_Keuanganfelixtrevin"
   },
   {
     "title": "Merevolusi Pembiayaan UMKM di Asia Tenggara",
@@ -37,7 +37,7 @@ const projects = [
     "tags": ["322310003 - Ruben Nathanael", "322310009 - David Augusto"],
     "featured": false,
     "demoLink": "/materi/peerberry",
-    "repoLink": "hhttps://github.com/breakthelimit775-cloud/FINTECH.git"
+    "repoLink": "https://github.com/breakthelimit775-cloud/FINTECH"
   },
 ];
 
