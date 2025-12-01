@@ -9,7 +9,7 @@ const projects = [
   },
   {
     "title": "Analisis Platform P2P Lending LenDenClub: Kinerja, Mekanisme, dan Potensi Risiko",
-    "description": "LenDenClub adalah platform peer-to-peer (P2P) lending yang menghubungkan pemberi pinjaman individu dengan peminjam terverifikasi secara langsung tanpa bank sebagai perantara.",
+    "description": "Ringkasan ini membahas cara kerja LenDenClub sebagai platform P2P lending di India, meliputi model bisnis, mekanisme penilaian risiko, peluang imbal hasil bagi lender, serta potensi risiko yang perlu diperhatikan oleh investor.",
     "tags": ["322310010 - Demitri Fernando Putra Aryandi", "322310021 - Ainu Azzaria"],
     "featured": false,
     "demoLink": "/materi/lendenclub",
@@ -17,11 +17,19 @@ const projects = [
   },
   {
     "title": "Transformasi Zopa: Evolusi P2P ke Bank Digital",
-    "description": "Analisis Adopsi Teknologi Kunci dalam Industri Finansial.",
+    "description": "Transformasi Zopa menunjukkan bagaimana inovasi teknologi seperti cloud, machine learning, dan security digital dapat meningkatkan efisiensi serta kepercayaan dalam layanan keuangan modern.",
     "tags": ["322310007 - Aveline Ong", "322310014 - Letsyia Agatha Surya Putri"],
     "featured": false,
     "demoLink": "/materi/zopa",
     "repoLink": null
+  },
+  {
+    "title": "Merevolusi Pembiayaan UMKM di Asia Tenggara",
+    "description": "Tunding Societies Malaysia, bagian dari grup Modalku, memimpin transformasi ini dengan mengandalkan teknologi digital, analitik data, dan sistem kredit berbasis AI (Artificial Intelligence).",
+    "tags": ["322310012 - Felix Chrisyanto", "322310019 - Trevin Yoris Kenjiro"],
+    "featured": false,
+    "demoLink": "/materi/fsmalaysia",
+    "repoLink": "https://github.com/FelixChrisyanto/Teknologi_Keuanganfelixtrevin.git"
   },
 ];
 
