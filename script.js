@@ -16,14 +16,6 @@ const projects = [
     "repoLink": "https://github.com/aiinuuazzariaa/LenDenClub"
   },
   {
-    "title": "Transformasi Zopa: Evolusi P2P ke Bank Digital",
-    "description": "Transformasi Zopa menunjukkan bagaimana inovasi teknologi seperti cloud, machine learning, dan security digital dapat meningkatkan efisiensi serta kepercayaan dalam layanan keuangan modern.",
-    "tags": ["322310007 - Aveline Ong", "322310014 - Letsyia Agatha Surya Putri"],
-    "featured": false,
-    "demoLink": "/materi/zopa",
-    "repoLink": null
-  },
-  {
     "title": "Merevolusi Pembiayaan UMKM di Asia Tenggara",
     "description": "Tunding Societies Malaysia, bagian dari grup Modalku, memimpin transformasi ini dengan mengandalkan teknologi digital, analitik data, dan sistem kredit berbasis AI (Artificial Intelligence).",
     "tags": ["322310012 - Felix Chrisyanto", "322310019 - Trevin Yoris Kenjiro"],
@@ -46,6 +38,14 @@ const projects = [
     "featured": false,
     "demoLink": "./materi/fundingcircle",
     "repoLink": "https://github.com/Marcell151/WebArtikel_P2P-Funding-Circle"
+  },
+  {
+    "title": "Transformasi Zopa: Evolusi P2P ke Bank Digital",
+    "description": "Transformasi Zopa menunjukkan bagaimana inovasi teknologi seperti cloud, machine learning, dan security digital dapat meningkatkan efisiensi serta kepercayaan dalam layanan keuangan modern.",
+    "tags": ["322310007 - Aveline Ong", "322310014 - Letsyia Agatha Surya Putri"],
+    "featured": false,
+    "demoLink": "/materi/zopa",
+    "repoLink": null
   },
   {
     "title": "Younited Credit: Revolusi Pinjaman Digital di Eropa",
