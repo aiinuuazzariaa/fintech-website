@@ -44,7 +44,7 @@ const projects = [
     "description": "Analisis mengenai perubahan teknologi, tata kelola, serta inovasi strategis yang membentuk arah perkembangan Funding Circle sebagai platform P2P lending modern.",
     "tags": ["322310015 - Marcell Chandra Kenchana", "322310020 - William Christoper Linardi"],
     "featured": false,
-    "demoLink": "/materi/fundingcircle",
+    "demoLink": "./index.html",
     "repoLink": "https://github.com/Marcell151/WebArtikel_P2P-Funding-Circle"
   },
 ];
