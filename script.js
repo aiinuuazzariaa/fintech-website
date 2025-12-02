@@ -32,8 +32,8 @@ const projects = [
     "repoLink": "https://github.com/FelixChrisyanto/Teknologi_Keuanganfelixtrevin"
   },
   {
-    "title": "Merevolusi Pembiayaan UMKM di Asia Tenggara",
-    "description": "Segala sesuatu yang perlu anda ketahui tentang perkembangan teknologi dan keuangan PeerBerry.",
+    "title": "Platform PeerBerry sebagai Inovasi Financial Technology di Sektor P2P Lending",
+    "description": "Analisis komprehensif tentang transformasi digital dalam layanan keuangan melalui platform peer-to-peer lending.",
     "tags": ["322310003 - Ruben Nathanael", "322310009 - David Augusto"],
     "featured": false,
     "demoLink": "/materi/peerberry",
