@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Transformasi Digital Funding Circle (UK)</title>
+
+<!-- Fonts: Source Serif Pro (judul) + Work Sans (body) -->
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Work+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg: #eef6fb;
+    --card: rgba(255,255,255,0.98);
+    --muted:#6b7280;
+    --text:#102a43;
+    --primary:#2d7abe;
+    --accent:#289aeb;
+    --glass: rgba(255,255,255,0.72);
+    --shadow: 0 8px 30px rgba(15,23,42,0.06);
+    --nav-h:64px;
+  }
+
+  /* Dark theme vars */
+  body.dark{
+    --bg:#081018;
+    --card: rgba(18,22,28,0.86);
+    --muted:#9aa8bf;
+    --text:#e6eef8;
+    --primary:#60a4fd;
+    --accent:#7bb5ff;
+    --glass: rgba(20,28,36,0.6);
+    --shadow: 0 10px 40px rgba(0,0,0,0.6);
+  }
+
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.65;
+    transition: background .25s ease, color .25s ease;
+    padding-top: var(--nav-h);
+  }
+
+  a{ color:var(--primary); text-decoration:none; }
+  a:hover{text-decoration:underline;}
+
+  /* NAVBAR (sticky, semi-transparent white) */
+  nav.site-nav{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:var(--nav-h);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.88));
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(16,42,67,0.06);
+    box-shadow: 0 6px 18px rgba(10,20,30,0.03);
+    z-index:1200;
+  }
+  body.dark nav.site-nav{
+    background: linear-gradient(180deg, rgba(16,22,28,0.86), rgba(16,22,28,0.8));
+    border-bottom:1px solid rgba(255,255,255,0.03);
+  }
+
+  .nav-inner{
+    width:100%;
+    max-width:1200px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:6px 20px;
+    box-sizing:border-box;
+    gap:12px;
+  }
+
+  .nav-left{
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+
+  .brand-text{
+    font-weight:700;
+    color:var(--primary);
+    font-size:0.95rem;
+    letter-spacing:0.1px;
+  }
+
+  .nav-links{
+    display:flex;
+    gap:10px;
+    align-items:center;
+  }
+  .nav-links a{
+    padding:8px 10px;
+    border-radius:8px;
+    font-weight:600;
+    color:var(--text);
+    transition:all .14s ease;
+    font-size:0.94rem;
+  }
+  .nav-links a:hover{ background: rgba(40,154,235,0.06); color:var(--primary); }
+  .nav-links a.active{ background: linear-gradient(90deg,var(--primary),var(--accent)); color:white; box-shadow: 0 6px 18px rgba(45,122,190,0.12); }
+
+  /* Pill-shaped theme toggle placed in navbar area (right side) */
+  .theme-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 12px;
+    border-radius:999px;
+    background:var(--card);
+    border:1px solid rgba(16,42,67,0.06);
+    cursor:pointer;
+    font-weight:700;
+    color:var(--primary);
+    box-shadow: 0 6px 18px rgba(10,20,30,0.04);
+    transition: transform .12s ease, background .2s ease;
+  }
+  .theme-pill:hover{ transform:translateY(-3px) }
+  body.dark .theme-pill{ color:var(--primary); }
+
+  /* Container */
+  .container{
+    max-width:1100px;
+    margin:26px auto 60px;
+    padding:0 20px;
+    box-sizing:border-box;
+  }
+
+  /* University identity block (before title) */
+  .identity{
+    text-align:center;
+    color:var(--muted);
+    margin-bottom:10px;
+    font-size:0.95rem;
+  }
+  .identity .uni{ font-weight:700; color:var(--text); margin-bottom:4px; font-size:1rem; }
+
+  /* HERO */
+  .hero{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:14px;
+  }
+  .hero-card{
+    width:100%;
+    background:var(--card);
+    border-radius:14px;
+    padding:32px 28px;
+    box-shadow: var(--shadow);
+    border:1px solid rgba(16,42,67,0.04);
+    text-align:center;
+  }
+  body.dark .hero-card{ border-color: rgba(255,255,255,0.03); }
+
+  .hero-title{
+    font-family: "Source Serif 4", serif;
+    font-size:2.05rem;
+    margin:0;
+    color:var(--text);
+    line-height:1.05;
+  }
+  .hero-sub{
+    margin-top:8px;
+    color:var(--muted);
+    font-size:1rem;
+    max-width:900px;
+    margin-left:auto;margin-right:auto;
+  }
+
+  /* stats */
+  .stats{
+    display:flex;
+    gap:14px;
+    margin-top:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .stat{
+    min-width:210px;
+    padding:16px 18px;
+    border-radius:12px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.94));
+    box-shadow: 0 8px 24px rgba(15,23,42,0.04);
+    border:1px solid rgba(16,42,67,0.03);
+    text-align:left;
+  }
+  body.dark .stat{ background: linear-gradient(180deg, rgba(18,22,28,0.64), rgba(18,22,28,0.6)); border-color: rgba(255,255,255,0.03); box-shadow:none; }
+  .stat .label{ color:var(--muted); font-size:0.9rem; margin-top:8px; }
+  .stat .value{ font-size:1.4rem; font-weight:700; color:var(--primary); }
+
+  /* article section (simple clean card) */
+  section.article{
+    margin-top:22px;
+    background:var(--card);
+    border-radius:12px;
+    padding:20px 22px;
+    box-shadow: var(--shadow);
+    border:1px solid rgba(16,42,67,0.04);
+  }
+  body.dark section.article{ border-color: rgba(255,255,255,0.03); }
+
+  section.article h2{
+    margin-top:0;
+    font-size:1.06rem;
+    color:var(--primary);
+    border-left:4px solid var(--accent);
+    padding-left:10px;
+    margin-bottom:12px;
+  }
+  section.article p{ margin:0 0 12px 0; color:var(--text); }
+
+  /* timeline */
+  .timeline{ border-left:3px solid var(--accent); padding-left:14px; }
+  .timeline .entry{ margin-bottom:12px; padding:10px; border-radius:10px; background: rgba(255,255,255,0.94); box-shadow: 0 6px 18px rgba(15,23,42,0.03); }
+  body.dark .timeline .entry{ background: rgba(18,22,28,0.62); box-shadow:none; }
+
+  /* opinion grid */
+  .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:12px; }
+  .grid .card{ padding:12px; border-radius:10px; background: transparent; border-left:4px solid var(--primary); box-shadow: 0 8px 20px rgba(15,23,42,0.03); }
+  .card h4{ margin:0 0 8px 0; color:var(--primary); }
+
+  /* bibliography */
+  .refs{ list-style:none; padding:0; margin:0; }
+  .refs li{ padding:12px 0; border-bottom:1px dashed rgba(16,42,67,0.04); color:var(--muted); font-size:0.95rem; word-break:break-word; }
+  .refs li a{ display:inline-block; margin-top:6px; color:var(--accent); }
+
+  /* footer */
+  footer.site{
+    margin-top:28px;
+    text-align:center;
+    color:white;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    padding:12px 18px;
+    border-radius:10px;
+  }
+
+  /* responsive adjustments */
+  @media (max-width:960px){
+    .grid{ grid-template-columns:repeat(2,1fr); }
+    .hero-title{ font-size:1.7rem; }
+  }
+  @media (max-width:640px){
+    :root{ --nav-h:56px; }
+    body{ padding-top:56px; }
+    .nav-inner{ padding:6px 12px; gap:8px; }
+    .nav-links{ gap:8px; overflow:auto; -webkit-overflow-scrolling:touch; padding-bottom:6px; }
+    .grid{ grid-template-columns:1fr; }
+    .stats{ flex-direction:column; gap:12px; align-items:center; }
+    .stat{ width:100%; max-width:420px; }
+    .hero-card{ padding:20px; }
+    .hero-title{ font-size:1.35rem; }
+    .identity{ font-size:0.92rem; }
+  }
+
+  /* accessibility focus */
+  a:focus, button:focus { outline: 3px solid rgba(45,122,190,0.14); outline-offset:3px; }
+</style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="site-nav" role="navigation" aria-label="Main">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <div class="brand-text" aria-hidden="true">Funding Circle</div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="nav-links" role="menubar" aria-label="Section links">
+          <a href="#latar" class="active">Latar</a>
+          <a href="#teori">Teori</a>
+          <a href="#opini">Opini</a>
+          <a href="#kesimpulan">Kesimpulan</a>
+          <a href="#pustaka">Pustaka</a>
+        </div>
+
+        <!-- Pill-shaped theme toggle, placed in navbar area (slightly to the right) -->
+        <button id="themePill" class="theme-pill" aria-pressed="false" title="Toggle dark mode">🌙 Gelap</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTAINER -->
+  <main class="container" role="main">
+
+    <!-- University identity (before title) -->
+    <div class="identity" aria-hidden="false">
+      <div class="uni">Universitas Ma Chung</div>
+      <div>Fakultas Teknologi dan Desain &middot; Program Studi Sistem Informasi</div>
+    </div>
+
+    <!-- HERO -->
+    <header class="hero" role="banner" aria-labelledby="main-title">
+      <div class="hero-card">
+        <h1 id="main-title" class="hero-title">Transformasi Digital Funding Circle (UK) dalam Industri P2P Lending</h1>
+        <p class="hero-sub">Analisis mengenai perubahan teknologi, tata kelola, serta inovasi strategis yang membentuk arah perkembangan Funding Circle sebagai platform P2P lending modern.</p>
+
+        <!-- Stat boxes -->
+        <div class="stats" role="list" aria-label="Statistik singkat Funding Circle">
+          <div class="stat" role="listitem" aria-label="Pendapatan Funding Circle">
+            <div class="value">£160M+</div>
+            <div class="label">Pendapatan (FY 2024, aprox.)</div>
+          </div>
+
+          <div class="stat" role="listitem" aria-label="Total pinjaman Funding Circle">
+            <div class="value">£15.2B+</div>
+            <div class="label">Total Pinjaman Tersalurkan (Sejak 2010)</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- BYLINE block -->
+    <section class="article" aria-labelledby="byline">
+      <h2 id="byline">Disusun Oleh</h2>
+      <p style="margin:6px 0 0; font-weight:600">Marcell Chandra Kenchana — 322310015 · William Christopher Linardi — 322310020</p>
+    </section>
+
+    <!-- LATAR -->
+    <section id="latar" class="article" aria-labelledby="latar-title">
+      <h2 id="latar-title">Latar Belakang</h2>
+      <p>Perkembangan teknologi keuangan mendorong perubahan besar dalam penyediaan layanan keuangan. Digitalisasi membuat proses transaksi, pembayaran, investasi, dan pembiayaan menjadi lebih cepat dan mudah dijangkau. Salah satu inovasi yang berkembang adalah peer-to-peer (P2P) lending, yaitu layanan pembiayaan yang mempertemukan peminjam dan pemberi dana melalui platform digital. Model ini memberi manfaat terutama bagi UKM yang sering mengalami keterbatasan akses permodalan dari lembaga konvensional.</p>
+      <p>Funding Circle merupakan perusahaan P2P lending asal Inggris yang berdiri pada 2010 dan berfokus pada pembiayaan UKM. Perusahaan ini mempertemukan peminjam dengan investor melalui sistem digital yang mengurangi peran perantara bank. Hingga 2024, Funding Circle mencatat pendapatan sekitar £160 juta dan mengalihkan fokus pendanaan dari investor ritel ke institusi. Suku bunga pinjaman berkisar 7–15% per tahun, bergantung pada risiko, dan penilaian kredit menggunakan algoritma berbasis data. Transparansi tetap diterapkan melalui pelaporan performa pinjaman dan tingkat gagal bayar.*</p>
+      <p>Dalam empat tahun terakhir, Funding Circle menghadapi keberhasilan dan tantangan besar. Penghentian layanan untuk investor ritel pada 2022 menjadi tanda perubahan model bisnis, sementara ekspansi ke Amerika Serikat dinilai tidak berhasil karena persaingan tinggi dan kondisi pasar yang berbeda. Perusahaan kemudian menjual unit AS pada 2024. Meski begitu, Funding Circle berhasil memperkuat kinerjanya di Inggris melalui restrukturisasi dan peluncuran produk baru seperti FlexiPay dan Business Credit Card.</p>
+      <p>Melihat dinamika tersebut, analisis lebih dalam diperlukan untuk memahami pengaruh regulasi, kondisi pasar, serta perubahan strategi bisnis terhadap kinerja Funding Circle. Studi ini mencoba memberikan gambaran tentang keberlanjutan model P2P lending, tantangan strategis perusahaan, dan relevansinya bagi perkembangan pembiayaan digital.</p>
+    </section>
+
+    <!-- TEORI / KERANGKA -->
+    <section id="teori" class="article" aria-labelledby="teori-title">
+      <h2 id="teori-title">Teori & Kerangka Transformasi</h2>
+
+      <h3 style="margin-top:6px">Sekilas tentang P2P Lending</h3>
+      <p>P2P lending adalah sistem pembiayaan digital yang menghubungkan peminjam dan pemberi dana tanpa perantara bank. Model ini membantu UKM memperoleh akses pembiayaan yang lebih fleksibel. Penilaian risiko pada P2P lending dilakukan menggunakan data dan algoritma untuk mempercepat proses dan meningkatkan akurasi analisis kredit.</p>
+      <p>Platform P2P memperoleh pendapatan dari biaya layanan yang dibebankan kepada peminjam. Keberhasilan model ini bergantung pada manajemen risiko, transparansi, kepercayaan pengguna, dan kepatuhan terhadap regulasi. Regulasi menjadi faktor penting dalam menjaga keamanan dan keberlanjutan ekosistem P2P lending.</p>
+
+      <h3 style="margin-top:6px">Buku dan Jurnal Pendukung</h3>
+      <p>Buku:</p>
+      <p>1. Fintech Peer to Peer Lending di Indonesia – menjelaskan konsep P2P, regulasi, peluang, dan tantangan.</p>
+      <p>2. Fintech dan Inovasi Keuangan Digital – membahas perkembangan fintech dan model layanan berbasis platform.</p>
+
+      <p>Jurnal:</p>
+      <p>1. Ali (2023) – membahas faktor yang memengaruhi keberhasilan dan risiko P2P lending.</p>
+      <p>2. Pratama & Nugroho (2022) – meneliti perkembangan pembiayaan UKM melalui P2P lending.</p>
+
+      <h3 style="margin-top:10px">Definisi dan Sejarah Funding Circle</h3>
+      <p>Funding Circle adalah platform P2P Lending di Inggris yang fokus pada pembiayaan UKM. Penilaian risiko dilakukan menggunakan algoritma internal, dengan suku bunga 7–15% per tahun. Pendapatan berasal dari biaya layanan. Sejak 2022, pendanaan hanya melalui investor institusional.</p>
+
+      <div class="timeline" aria-hidden="false">
+        <div class="entry"><strong>2010</strong> – Funding Circle didirikan di London sebagai platform P2P UKM.</div>
+        <div class="entry"><strong>2013–2016</strong> – Ekspansi internasional (AS, Jerman, Belanda).</div>
+        <div class="entry"><strong>2018</strong> – IPO di London Stock Exchange.</div>
+        <div class="entry"><strong>2022</strong> – Menghentikan layanan investor ritel, fokus ke investor institusi.</div>
+        <div class="entry"><strong>2024</strong> – Penjualan unit AS sebesar £33 juta, penataan ulang strategi produk dan risiko.</div>
+        <div class="entry"><strong>2024–2025</strong> – Mulai pulih melalui FlexiPay dan Business Credit Card, serta kembali fokus pada pasar UK.</div>
+      </div>
+    </section>
+
+    <!-- OPINI -->
+    <section id="opini" class="article" aria-labelledby="opini-title">
+      <h2 id="opini-title">Opini</h2>
+
+      <div class="grid" role="list">
+        <div class="card" role="listitem">
+          <h4>Security</h4>
+          <p>Funding Circle menjaga keamanan melalui enkripsi data, verifikasi identitas (KYC), dan penerapan AML sesuai standar FCA. Sistem penilaian kredit berbasis machine learning membantu mengurangi risiko. Dana investor ditempatkan pada ring-fenced accounts sehingga terpisah dari dana operasional. Langkah-langkah ini memastikan perlindungan teknis dan finansial bagi pengguna.</p>
+        </div>
+
+        <div class="card" role="listitem">
+          <h4>Liability</h4>
+          <p>Tanggung jawab Funding Circle terletak pada penyediaan informasi risiko, penilaian kredit yang wajar, dan proses penagihan yang sesuai prosedur. Meskipun demikian, platform tidak menjamin pengembalian dana investor karena model P2P selalu mengandung risiko gagal bayar. Tugas utama perusahaan adalah menjaga kualitas analisis risiko dan transparansi.</p>
+        </div>
+
+        <div class="card" role="listitem">
+          <h4>Accountability</h4>
+          <p>Funding Circle berada di bawah pengawasan FCA, sehingga wajib mematuhi aturan perlindungan konsumen dan manajemen risiko. Keputusan menutup layanan investor ritel dan menjual unit AS mencerminkan langkah mitigasi risiko yang lebih besar. Struktur pengawasan ini menunjukkan penerapan tata kelola yang selaras dengan prinsip Good Corporate Governance.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- KESIMPULAN -->
+    <section id="kesimpulan" class="article" aria-labelledby="kes-title">
+      <h2 id="kes-title">Kesimpulan & Saran</h2>
+      <p>Funding Circle berperan sebagai penyedia pembiayaan alternatif bagi UKM di Inggris melalui model P2P lending. Dalam beberapa tahun terakhir, perusahaan menghadapi keberhasilan di pasar domestik namun juga mengalami kegagalan ekspansi di luar negeri. Strategi bisnis yang berubah, dari pendanaan ritel menuju institusi, menunjukkan upaya adaptasi terhadap kondisi pasar dan regulasi. Keamanan data, manajemen risiko, dan kepatuhan menjadi aspek penting dalam operasional Funding Circle, meskipun risiko gagal bayar tetap tidak dapat dihilangkan sepenuhnya.</p>
+      <p>Funding Circle disarankan untuk terus meningkatkan akurasi penilaian risiko dan menjaga transparansi informasi. Proses ekspansi perlu mempertimbangkan kesiapan regulasi dan karakteristik pasar. Bagi pengguna, penting untuk memahami risiko P2P lending dan menerapkan prinsip kehati-hatian, baik sebagai peminjam maupun investor.</p>
+    </section>
+
+    <!-- PUSTAKA -->
+    <section id="pustaka" class="article" aria-labelledby="pustaka-title">
+      <h2 id="pustaka-title">Daftar Pustaka</h2>
+
+      <ul class="refs" aria-label="Daftar pustaka">
+        <li>
+            Agreement reached with iBusiness Funding to acquire Funding Circle’s US business — Press release resmi Funding Circle, 25 June 2024. <br>
+            <a href="https://corporate.fundingcircle.com/media/press-releases/completion-process-focus-uk-business/" target="_blank">
+                https://corporate.fundingcircle.com/media/press-releases/completion-process-focus-uk-business/
+            </a>
+        </li>
+
+        <li>
+            Funding Circle Sells US Business to iBusiness Funding for £33m — Artikel FinanzWire, 25 June 2024. <br>
+            <a href="https://www.finanzwire.com/article/funding-circle-sells-us-business-to-ibusiness-funding-for-33m-Y2KwbrSe4sE" target="_blank">
+                https://www.finanzwire.com/article/funding-circle-sells-us-business-to-ibusiness-funding-for-33m-Y2KwbrSe4sE
+            </a>
+        </li>
+
+        <li>
+            Funding Circle swings into profit in 'transformative year' — 6 Mar 2025. <br>
+            <a href="https://alternativecreditinvestor.com/2025/03/06/funding-circle-swings-into-profit-in-transformative-year/" target="_blank">
+                https://alternativecreditinvestor.com/2025/03/06/funding-circle-swings-into-profit-in-transformative-year/
+            </a>
+        </li>
+
+        <li>
+            Full Year 2024 Results — Press release, 6 Mar 2025. <br>
+            <a href="https://corporate.fundingcircle.com/media/press-releases/full-year-2024-results/" target="_blank">
+                https://corporate.fundingcircle.com/media/press-releases/full-year-2024-results/
+            </a>
+        </li>
+
+        <li>
+            Funding Circle sells US business for £33m amid cost-cutting drive — 25 Jun 2024. <br>
+            <a href="https://www.standard.co.uk/business/business-news/funding-circle-sells-us-business-for-ps33m-amid-costcutting-drive-b1166613.html" target="_blank">
+                https://www.standard.co.uk/business/business-news/funding-circle-sells-us-business-for-ps33m-amid-costcutting-drive-b1166613.html
+            </a>
+        </li>
+
+        <li>
+            Funding Circle forecasts full-year profit in line with guidance — 14 Jan 2025. <br>
+            <a href="https://uk.investing.com/news/company-news/funding-circle-forecasts-fullyear-profit-in-line-with-guidance-93CH-3872611" target="_blank">
+                https://uk.investing.com/news/company-news/funding-circle-forecasts-fullyear-profit-in-line-with-guidance-93CH-3872611
+            </a>
+        </li>
+
+        <li>
+            Half Year 2025 Results — Press release, 4 Sep 2025. <br>
+            <a href="https://corporate.fundingcircle.com/media/press-releases/half-year-2025-results/" target="_blank">
+                https://corporate.fundingcircle.com/media/press-releases/half-year-2025-results/
+            </a>
+        </li>
+
+        <li>
+            Impact Report 2023–2024. <br>
+            <a href="https://assets.ctfassets.net/66s1u2l7lxr3/impact-report-2023.pdf" target="_blank">
+                https://assets.ctfassets.net/66s1u2l7lxr3/impact-report-2023.pdf
+            </a>
+        </li>
+
+        <li>
+            Annual Report &amp; Accounts 2024. <br>
+            <a href="https://corporate.fundingcircle.com/investors/results-reports" target="_blank">
+                https://corporate.fundingcircle.com/investors/results-reports
+            </a>
+        </li>
+
+        <li>
+            Funding Circle to close peer-to-peer platform to retail investors — 22 Nov 2021. <br>
+            <a href="https://www.reuters.com/business/funding-circle-close-platform-retail-investors-2021-11-22/" target="_blank">
+                https://www.reuters.com/business/funding-circle-close-platform-retail-investors-2021-11-22/
+            </a>
+        </li>
+
+        <li>
+            Financial Conduct Authority — Registration. <br>
+            <a href="https://register.fca.org.uk/s/firm?id=001b000000MfG6GAAV" target="_blank">
+                https://register.fca.org.uk/s/firm?id=001b000000MfG6GAAV
+            </a>
+        </li>
+
+        <li>
+            BBC News — Funding Circle to sell U.S. business. <br>
+            <a href="https://www.bbc.com/news/business-68214245" target="_blank">
+                https://www.bbc.com/news/business-68214245
+            </a>
+        </li>
+
+        <li>
+            How We Protect Your Money — Help Centre. <br>
+            <a href="https://www.fundingcircle.com/uk/resources/how-we-protect-your-money" target="_blank">
+                https://www.fundingcircle.com/uk/resources/how-we-protect-your-money
+            </a>
+        </li>
+
+        <li>
+            Machine Learning Credit Scoring. <br>
+            <a href="https://engineering.fundingcircle.com/tag/machine-learning/" target="_blank">
+                https://engineering.fundingcircle.com/tag/machine-learning/
+            </a>
+        </li>
+
+        <li>
+            Statistics Dashboard. <br>
+            <a href="https://www.fundingcircle.com/uk/statistics" target="_blank">
+                https://www.fundingcircle.com/uk/statistics
+            </a>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="site" role="contentinfo" aria-label="Footer">
+      <div style="max-width:1100px;margin:22px auto 0; padding:0 20px;">
+        <div style="text-align:center; color:white; background: linear-gradient(90deg,var(--primary),var(--accent)); padding:12px; border-radius:10px;">© 2025 — Transformasi Digital Funding Circle (UK)</div>
+      </div>
+    </footer>
+
+  </main>
+
+<script>
+  // Theme pill toggle (placed in navbar)
+  const themePill = document.getElementById('themePill');
+  function applyThemeButton(){
+    const isDark = document.body.classList.contains('dark');
+    themePill.textContent = isDark ? '☀️ Terang' : '🌙 Gelap';
+    themePill.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+  }
+  themePill.addEventListener('click', ()=> {
+    document.body.classList.toggle('dark');
+    applyThemeButton();
+  });
+  applyThemeButton();
+
+  // Smooth scroll + active nav highlight
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = document.querySelectorAll('main section[id]');
+  function setActive(){
+    const offset = window.scrollY + (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 64) + 10;
+    let cur = sections[0];
+    sections.forEach(s => { if(s.offsetTop <= offset) cur = s; });
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#'+cur.id));
+  }
+  setActive();
+  window.addEventListener('scroll', ()=> setActive(), {passive:true});
+
+  // smooth scroll behaviour on nav click
+  navLinks.forEach(a=>{
+    a.addEventListener('click', e=>{
+      e.preventDefault();
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if(!el) return;
+      const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 64;
+      const top = el.getBoundingClientRect().top + window.scrollY - navH - 12;
+      window.scrollTo({top, behavior:'smooth'});
+    });
+  });
+
+  // Accessibility: respect prefers-color-scheme default
+  (function initThemeFromSystem(){
+    try {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if(prefersDark && !document.body.classList.contains('dark')){
+        document.body.classList.add('dark');
+      }
+      applyThemeButton();
+    } catch(e){}
+  })();
+</script>
+
+</body>
+</html>
