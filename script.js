@@ -44,8 +44,16 @@ const projects = [
     "description": "Analisis mengenai perubahan teknologi, tata kelola, serta inovasi strategis yang membentuk arah perkembangan Funding Circle sebagai platform P2P lending modern.",
     "tags": ["322310015 - Marcell Chandra Kenchana", "322310020 - William Christoper Linardi"],
     "featured": false,
-    "demoLink": "./materi/index.html",
+    "demoLink": "./materi/fundingcircle",
     "repoLink": "https://github.com/Marcell151/WebArtikel_P2P-Funding-Circle"
+  },
+  {
+    "title": "Younited Credit: Revolusi Pinjaman Digital di Eropa",
+    "description": "Inovasi Marketplace Lending yang Mengubah Industri Kredit Eropa.",
+    "tags": ["32210005 - Kevin Christian Dwi Putra Astawa", "322310001 - Carlo Imanuel Suryahasilaga", "322310006 - Angelina Felicia Suhartono"],
+    "featured": false,
+    "demoLink": "./materi/younitedcredit",
+    "repoLink": "https://github.com/carlouvre/teknologi-keuangan"
   },
 ];
 
