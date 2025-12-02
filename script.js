@@ -39,6 +39,14 @@ const projects = [
     "demoLink": "/materi/peerberry",
     "repoLink": "https://github.com/breakthelimit775-cloud/FINTECH"
   },
+  {
+    "title": "Merevolusi Pembiayaan UMKM di Asia Tenggara",
+    "description": "Analisis mengenai Funding Circle, salah satu platform P2P lending asal Inggris. Konten di dalamnya mencakup latar belakang perkembangan fintech, teori pendukung, hingga evaluasi keberhasilan dan tantangan Funding Circle.",
+    "tags": ["322310015 - Marcell Chandra Kenchana", "322310020 - William Christoper Linardi"],
+    "featured": false,
+    "demoLink": "/materi/fundingcicrcle",
+    "repoLink": "https://github.com/Marcell151/WebArtikel_P2P-Funding-Circle"
+  },
 ];
 
 function renderProjects(filtered) {
